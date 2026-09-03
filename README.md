@@ -2,7 +2,9 @@
 
 ## Gestión de Mantenimiento de Equipos de Carguío en Minas a Tajo Abierto
 
-Aplicación web desarrollada con **Python + Streamlit** que implementa gemelos digitales para monitorear, predecir y gestionar el mantenimiento de equipos de carguío (camiones, excavadoras, cargadores) en operaciones mineras.
+Aplicación web desarrollada con **Python + Streamlit** para monitorear, simular y gestionar el mantenimiento predictivo de equipos de carguío (camiones, excavadoras y cargadores) en operaciones mineras.
+
+Incluye datos sintéticos de demostración, una base de datos SQLite local y modelos de Machine Learning previamente entrenados. Está preparada para ejecutarse localmente o publicarse como aplicación en Streamlit Community Cloud.
 
 ---
 
@@ -13,6 +15,7 @@ Aplicación web desarrollada con **Python + Streamlit** que implementa gemelos d
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Instalación y Configuración](#instalación-y-configuración)
+- [Publicación en Streamlit Cloud](#publicación-en-streamlit-cloud)
 - [Guía de Usuario](#guía-de-usuario)
 - [Roles y Permisos](#roles-y-permisos)
 - [Metodología Scrum](#metodología-scrum)
@@ -100,7 +103,7 @@ Aplicación web desarrollada con **Python + Streamlit** que implementa gemelos d
 
 | Categoría | Tecnologías |
 |-----------|-------------|
-| **Lenguaje** | Python 3.10+ |
+| **Lenguaje** | Python 3.12 |
 | **Framework Web** | Streamlit 1.28+ |
 | **Base de Datos** | SQLite3 |
 | **Análisis de Datos** | Pandas, NumPy |
@@ -129,10 +132,15 @@ gemelo_digital_minero/
 │   ├── gemelo_digital.py       # Gemelo digital y simulación
 │   ├── mantenimiento.py        # Órdenes de trabajo y mantenimiento
 │   ├── reportes.py             # Generación de reportes
-│   └── predictivo.py           # Análisis predictivo ML
+│   ├── predictivo.py           # Análisis predictivo ML
+│   └── motor_ia.py             # Entrenamiento y carga de modelos
 ├── utils/                      # Utilidades
 │   ├── __init__.py
 │   └── database.py             # Gestión de base de datos
+├── models/                     # Modelos y metadatos versionados
+├── scripts/                    # Generación de datos sintéticos
+├── tests/                      # Pruebas funcionales
+├── notebooks/                  # Análisis exploratorio
 └── docs/                       # Documentación adicional
 ```
 
@@ -141,7 +149,7 @@ gemelo_digital_minero/
 ## 🚀 Instalación y Configuración
 
 ### Prerrequisitos
-- Python 3.10 o superior
+- Python 3.12 (requerido por `tensorflow-cpu==2.15.0`)
 - pip (gestor de paquetes de Python)
 
 ### Pasos de Instalación
@@ -151,7 +159,7 @@ gemelo_digital_minero/
    cd gemelo_digital_minero
    ```
 
-2. **Crear entorno virtual con Python 3.12 (recomendado para TensorFlow)**
+2. **Crear entorno virtual con Python 3.12**
    ```bash
    # Windows
    py -3.12 -m venv venv312
@@ -162,8 +170,8 @@ gemelo_digital_minero/
    source venv312/bin/activate
    ```
    > **Importante:** Los modelos híbridos (CNN-LSTM y LSTM-Autoencoder) requieren
-   > **TensorFlow**, que solo está soportado hasta **Python 3.12**. Usa Python 3.12
-   > para habilitar el entrenamiento nativo de los híbridos (sin fallback simulado).
+   > TensorFlow. Los modelos guardados en `models/` permiten usar la aplicación sin
+   > volver a entrenar al iniciar.
 
 3. **Instalar dependencias**
    ```bash
@@ -187,6 +195,25 @@ gemelo_digital_minero/
 6. **Acceder al sistema**
    - Abrir navegador en: `http://localhost:8501`
    - La base de datos se inicializa automáticamente con datos de demostración
+
+### Publicación en Streamlit Cloud
+
+El repositorio ya incluye `requirements.txt` y `runtime.txt`. Para publicar la aplicación:
+
+1. Sube este repositorio a GitHub, incluyendo `app.py`, `modules/`, `utils/`, `data/` y `models/`.
+2. Entra a [share.streamlit.io](https://share.streamlit.io/) e inicia sesión con GitHub.
+3. Selecciona **New app**, el repositorio y la rama que contiene el proyecto.
+4. En **Main file path**, indica `app.py` y pulsa **Deploy**.
+5. Espera a que finalice la instalación de dependencias. El primer despliegue puede tardar por TensorFlow.
+
+No se requieren variables en **Secrets** para la demo. Si defines `JWT_SECRET_KEY`, usa una clave larga y aleatoria; en caso contrario la aplicación utiliza una clave de demostración incluida en el código.
+
+#### Consideraciones de Streamlit Cloud
+
+- La aplicación usa SQLite en `data/gemelo_digital.db`. Streamlit Cloud ofrece almacenamiento efímero: los cambios realizados desde la interfaz pueden perderse al reiniciar o redeployar.
+- Los archivos de `models/` deben estar en el repositorio para evitar un entrenamiento costoso durante el primer uso del módulo **Motor IA**.
+- El repositorio contiene credenciales de demostración. Cámbialas antes de usar la aplicación con información real.
+- Para producción se recomienda sustituir SQLite por una base de datos externa y gestionar usuarios y secretos fuera del repositorio.
 
 ---
 
@@ -280,6 +307,11 @@ El sistema incluye datos simulados realistas basados en especificaciones de equi
 - Verifique que exista la carpeta `data/`
 - La aplicación crea la base de datos automáticamente al primer inicio
 
+### Error al instalar TensorFlow o NumPy en Streamlit Cloud
+- Confirme que `runtime.txt` contiene `3.12`.
+- Confirme que `requirements.txt` mantiene `tensorflow-cpu==2.15.0` y `numpy<2.0`.
+- Reinicie la aplicación desde **Manage app > Reboot app** después de actualizar el repositorio.
+
 ### Error: Dependencias faltantes
 - Ejecute: `pip install -r requirements.txt --upgrade`
 
@@ -340,4 +372,4 @@ Para consultas o soporte técnico, revisar:
 
 ---
 
-**¡Gracias por usar el Sistema de Gemelos Digitales para Minería! ⛏️**
+**Sistema de Gemelos Digitales para Minería**
