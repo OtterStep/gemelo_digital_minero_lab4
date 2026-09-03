@@ -1,0 +1,115 @@
+{
+  "objetivos_negocio": {
+    "reducir_mttr_pct": 20,
+    "aumentar_disponibilidad_pct": 5,
+    "reducir_costos_pct": 15,
+    "costo_falla_no_detectada": 25000,
+    "costo_falso_positivo": 500
+  },
+  "criterios_exito": {
+    "precision_min": 0.85,
+    "sensibilidad_min": 0.9,
+    "f1_min": 0.85,
+    "tiempo_inferencia_max_seg": 1.0
+  },
+  "preparacion": {
+    "ventana_temporal": 24,
+    "horas_prediccion": 100,
+    "test_size": 0.15,
+    "val_size": 0.15,
+    "balanceo_clases": "smote",
+    "tratamiento_nulos": "knn",
+    "metodo_outliers": "iqr"
+  },
+  "hiperparametros": {
+    "random_forest": {
+      "n_estimators": [
+        100,
+        200
+      ],
+      "max_depth": [
+        10,
+        null
+      ],
+      "min_samples_split": [
+        2,
+        5
+      ],
+      "cv": 3
+    },
+    "xgboost": {
+      "learning_rate": [
+        0.01,
+        0.1
+      ],
+      "n_estimators": [
+        100,
+        300
+      ],
+      "max_depth": [
+        3,
+        6
+      ],
+      "subsample": [
+        0.8,
+        1.0
+      ]
+    },
+    "svm": {
+      "C": [
+        1,
+        10
+      ],
+      "gamma": [
+        "scale",
+        0.01
+      ],
+      "kernel": [
+        "rbf",
+        "linear"
+      ],
+      "cv": 3
+    },
+    "cnn_lstm": {
+      "filtros_cnn": [
+        32,
+        64
+      ],
+      "unidades_lstm": [
+        50,
+        100
+      ],
+      "dropout": 0.3,
+      "learning_rate": 0.001,
+      "epochs": 50,
+      "batch_size": 32
+    },
+    "lstm_ae_rf": {
+      "unidades_lstm_ae": 64,
+      "dimension_latente": 16,
+      "epochs_ae": 30,
+      "batch_size_ae": 32,
+      "n_estimators_rf": 200
+    }
+  },
+  "criterios_seleccion": {
+    "rendimiento_predictivo": 0.4,
+    "tiempo_inferencia": 0.25,
+    "interpretabilidad": 0.2,
+    "facilidad_mantenimiento": 0.15
+  },
+  "interpretabilidad_algoritmos": {
+    "random_forest": 8,
+    "xgboost": 7,
+    "svm": 4,
+    "cnn_lstm": 2,
+    "lstm_ae_rf": 5
+  },
+  "mantenibilidad_algoritmos": {
+    "random_forest": 9,
+    "xgboost": 8,
+    "svm": 6,
+    "cnn_lstm": 3,
+    "lstm_ae_rf": 4
+  }
+}

@@ -1,0 +1,836 @@
+[2026-08-31 09:51:26] MotorPredictivo inicializado - 2026-08-31 09:51:26
+[2026-08-31 09:51:37] MotorPredictivo inicializado - 2026-08-31 09:51:37
+[2026-08-31 09:51:37] Datos cargados: 301 registros, 25 columnas
+[2026-08-31 09:51:37] EDA completado: 13 variables analizadas
+[2026-08-31 09:51:37] Datos preparados: Train=210, Val=45, Test=46
+[2026-08-31 09:51:37] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-08-31 09:51:47] MotorPredictivo inicializado - 2026-08-31 09:51:47
+[2026-08-31 09:51:47] Datos cargados: 301 registros, 25 columnas
+[2026-08-31 09:51:48] Datos preparados: Train=210, Val=45, Test=46
+[2026-08-31 09:51:48] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-08-31 09:51:48] Entrenando Random Forest...
+[2026-08-31 09:51:48] Random Forest entrenado en 0.11s
+[2026-08-31 09:51:48] Entrenando XGBoost...
+[2026-08-31 09:51:48] XGBoost entrenado en 0.08s
+[2026-08-31 09:51:48] Entrenando SVM...
+[2026-08-31 09:52:04] MotorPredictivo inicializado - 2026-08-31 09:52:04
+[2026-08-31 09:52:04] Datos cargados: 301 registros, 25 columnas
+[2026-08-31 09:52:04] SMOTE aplicado: 210 → 326 muestras
+[2026-08-31 09:52:04] Datos preparados: Train=210, Val=45, Test=46
+[2026-08-31 09:52:04] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-08-31 09:52:04] ============================================================
+[2026-08-31 09:52:04] INICIANDO ENTRENAMIENTO DE 5 ALGORITMOS
+[2026-08-31 09:52:04] ============================================================
+[2026-08-31 09:52:04] Entrenando Random Forest...
+[2026-08-31 09:52:04] Random Forest entrenado en 0.11s
+[2026-08-31 09:52:04] Entrenando XGBoost...
+[2026-08-31 09:52:05] XGBoost entrenado en 0.07s
+[2026-08-31 09:52:05] Entrenando SVM...
+[2026-08-31 09:52:05] SVM entrenado en 0.01s
+[2026-08-31 09:52:05] Entrenando CNN-LSTM...
+[2026-08-31 09:52:09] CNN-LSTM entrenado en 4.10s
+[2026-08-31 09:52:09] Entrenando LSTM-Autoencoder + Random Forest...
+[2026-08-31 09:52:15] LSTM-AE + RF entrenado en 6.06s
+[2026-08-31 09:52:15] 
+✅ Entrenamiento completado: 5 algoritmos listos
+[2026-08-31 09:52:15] 
+============================================================
+[2026-08-31 09:52:15] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-08-31 09:52:15] ============================================================
+[2026-08-31 09:52:15] 
+📊 RANDOM_FOREST:
+[2026-08-31 09:52:15]    Accuracy: 1.0000
+[2026-08-31 09:52:15]    F1-Score: 1.0000
+[2026-08-31 09:52:15]    AUC-ROC:  1.0000
+[2026-08-31 09:52:15]    Inferencia: 0.54 ms
+[2026-08-31 09:52:15] 
+📊 XGBOOST:
+[2026-08-31 09:52:15]    Accuracy: 0.9565
+[2026-08-31 09:52:15]    F1-Score: 0.9575
+[2026-08-31 09:52:15]    AUC-ROC:  1.0000
+[2026-08-31 09:52:15]    Inferencia: 0.02 ms
+[2026-08-31 09:52:15] 
+📊 SVM:
+[2026-08-31 09:52:15]    Accuracy: 0.7826
+[2026-08-31 09:52:15]    F1-Score: 0.7758
+[2026-08-31 09:52:15]    AUC-ROC:  0.8775
+[2026-08-31 09:52:15]    Inferencia: 0.03 ms
+[2026-08-31 09:52:16] 
+📊 CNN_LSTM:
+[2026-08-31 09:52:16]    Accuracy: 0.4783
+[2026-08-31 09:52:16]    F1-Score: 0.5391
+[2026-08-31 09:52:16]    AUC-ROC:  0.4605
+[2026-08-31 09:52:16]    Inferencia: 18.10 ms
+[2026-08-31 09:52:16] 
+📊 LSTM_AE_RF:
+[2026-08-31 09:52:16]    Accuracy: 0.8261
+[2026-08-31 09:52:16]    F1-Score: 0.7474
+[2026-08-31 09:52:16]    AUC-ROC:  0.5132
+[2026-08-31 09:52:16]    Inferencia: 3.36 ms
+[2026-08-31 09:52:16] 
+🏆 MEJOR ALGORITMO SELECCIONADO: RANDOM_FOREST
+[2026-08-31 09:52:16]    Puntuación general: 0.9379
+[2026-08-31 09:52:28] MotorPredictivo inicializado - 2026-08-31 09:52:28
+[2026-08-31 09:52:28] Datos cargados: 301 registros, 25 columnas
+[2026-08-31 09:52:28] SMOTE aplicado: 210 → 326 muestras
+[2026-08-31 09:52:28] Datos preparados: Train=210, Val=45, Test=46
+[2026-08-31 09:52:28] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-08-31 09:52:28] ============================================================
+[2026-08-31 09:52:28] INICIANDO ENTRENAMIENTO DE 5 ALGORITMOS
+[2026-08-31 09:52:28] ============================================================
+[2026-08-31 09:52:28] Entrenando Random Forest...
+[2026-08-31 09:52:28] Random Forest entrenado en 0.13s
+[2026-08-31 09:52:28] Entrenando XGBoost...
+[2026-08-31 09:52:28] XGBoost entrenado en 0.09s
+[2026-08-31 09:52:28] Entrenando SVM...
+[2026-08-31 09:52:28] SVM entrenado en 0.01s
+[2026-08-31 09:52:28] Entrenando CNN-LSTM...
+[2026-08-31 09:52:33] CNN-LSTM entrenado en 4.38s
+[2026-08-31 09:52:33] Entrenando LSTM-Autoencoder + Random Forest...
+[2026-08-31 09:52:38] LSTM-AE + RF entrenado en 5.21s
+[2026-08-31 09:52:38] 
+✅ Entrenamiento completado: 5 algoritmos listos
+[2026-08-31 09:52:38] 
+============================================================
+[2026-08-31 09:52:38] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-08-31 09:52:38] ============================================================
+[2026-08-31 09:52:38] 
+📊 RANDOM_FOREST:
+[2026-08-31 09:52:38]    Accuracy: 1.0000
+[2026-08-31 09:52:38]    F1-Score: 1.0000
+[2026-08-31 09:52:38]    AUC-ROC:  1.0000
+[2026-08-31 09:52:38]    Inferencia: 0.75 ms
+[2026-08-31 09:52:38] 
+📊 XGBOOST:
+[2026-08-31 09:52:38]    Accuracy: 0.9565
+[2026-08-31 09:52:38]    F1-Score: 0.9575
+[2026-08-31 09:52:38]    AUC-ROC:  1.0000
+[2026-08-31 09:52:38]    Inferencia: 0.03 ms
+[2026-08-31 09:52:38] 
+📊 SVM:
+[2026-08-31 09:52:38]    Accuracy: 0.7826
+[2026-08-31 09:52:38]    F1-Score: 0.7758
+[2026-08-31 09:52:38]    AUC-ROC:  0.8775
+[2026-08-31 09:52:38]    Inferencia: 0.03 ms
+[2026-08-31 09:52:39] 
+📊 CNN_LSTM:
+[2026-08-31 09:52:39]    Accuracy: 0.8261
+[2026-08-31 09:52:39]    F1-Score: 0.7474
+[2026-08-31 09:52:39]    AUC-ROC:  0.3684
+[2026-08-31 09:52:39]    Inferencia: 17.10 ms
+[2026-08-31 09:52:39] 
+📊 LSTM_AE_RF:
+[2026-08-31 09:52:39]    Accuracy: 0.8261
+[2026-08-31 09:52:39]    F1-Score: 0.7474
+[2026-08-31 09:52:39]    AUC-ROC:  0.6184
+[2026-08-31 09:52:39]    Inferencia: 3.27 ms
+[2026-08-31 09:52:39] 
+🏆 MEJOR ALGORITMO SELECCIONADO: RANDOM_FOREST
+[2026-08-31 09:52:39]    Puntuación general: 0.9345
+[2026-08-31 09:52:39] Modelos guardados en: /sandboxdata/workspace/file/gemelo_digital_minero/models
+[2026-08-31 09:52:39] MotorPredictivo inicializado - 2026-08-31 09:52:39
+[2026-08-31 09:52:40] Modelos cargados exitosamente desde: /sandboxdata/workspace/file/gemelo_digital_minero/models
+[2026-08-31 09:52:40] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-08-31 09:57:17] MotorPredictivo inicializado - 2026-08-31 09:57:17
+[2026-08-31 09:57:18] Modelos cargados exitosamente desde: /sandboxdata/workspace/file/gemelo_digital_minero/models
+[2026-08-31 09:57:18] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-08-31 09:57:18] 
+🏆 MEJOR ALGORITMO SELECCIONADO: RANDOM_FOREST
+[2026-08-31 09:57:18]    Puntuación general: 0.9345
+[2026-08-31 09:57:18] Datos cargados: 301 registros, 25 columnas
+[2026-08-31 09:57:18] SMOTE aplicado: 210 → 326 muestras
+[2026-08-31 09:57:18] Datos preparados: Train=210, Val=45, Test=46
+[2026-08-31 09:57:18] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 10:42:14] MotorPredictivo inicializado - 2026-09-01 10:42:14
+[2026-09-01 10:42:15] MotorPredictivo inicializado - 2026-09-01 10:42:15
+[2026-09-01 10:42:36] MotorPredictivo inicializado - 2026-09-01 10:42:36
+[2026-09-01 10:43:50] MotorPredictivo inicializado - 2026-09-01 10:43:50
+[2026-09-01 10:43:50] Error al cargar modelos: No module named 'xgboost'
+[2026-09-01 10:44:22] MotorPredictivo inicializado - 2026-09-01 10:44:22
+[2026-09-01 10:44:22] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 10:44:22] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm']
+[2026-09-01 10:46:46] MotorPredictivo inicializado - 2026-09-01 10:46:46
+[2026-09-01 10:46:46] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 10:46:46] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm']
+[2026-09-01 10:47:29] MotorPredictivo inicializado - 2026-09-01 10:47:29
+[2026-09-01 10:47:29] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 10:47:29] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm']
+[2026-09-01 10:47:29] 
+🏆 MEJOR ALGORITMO SELECCIONADO: RANDOM_FOREST
+[2026-09-01 10:47:29]    Puntuación general: 0.9345
+[2026-09-01 10:50:32] MotorPredictivo inicializado - 2026-09-01 10:50:32
+[2026-09-01 10:50:32] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 10:50:32] EDA completado: 13 variables analizadas
+[2026-09-01 10:53:25] MotorPredictivo inicializado - 2026-09-01 10:53:25
+[2026-09-01 10:53:25] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 10:53:25] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm']
+[2026-09-01 10:53:25] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 10:53:25] 
+🏆 MEJOR ALGORITMO SELECCIONADO: RANDOM_FOREST
+[2026-09-01 10:53:25]    Puntuación general: 0.9345
+[2026-09-01 10:54:10] EDA completado: 13 variables analizadas
+[2026-09-01 10:58:32] MotorPredictivo inicializado - 2026-09-01 10:58:32
+[2026-09-01 10:58:32] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 10:58:32] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm']
+[2026-09-01 10:58:32] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 10:58:32] 
+🏆 MEJOR ALGORITMO SELECCIONADO: RANDOM_FOREST
+[2026-09-01 10:58:32]    Puntuación general: 0.9345
+[2026-09-01 10:58:39] EDA completado: 13 variables analizadas
+[2026-09-01 11:09:22] MotorPredictivo inicializado - 2026-09-01 11:09:22
+[2026-09-01 11:09:22] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:09:22] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm']
+[2026-09-01 11:09:22] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:09:22] 
+🏆 MEJOR ALGORITMO SELECCIONADO: RANDOM_FOREST
+[2026-09-01 11:09:22]    Puntuación general: 0.9345
+[2026-09-01 11:22:23] MotorPredictivo inicializado - 2026-09-01 11:22:23
+[2026-09-01 11:22:23] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:22:25] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:22:25] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:22:25] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:22:25] Entrenando Random Forest...
+[2026-09-01 11:22:25] Random Forest entrenado en 0.11s
+[2026-09-01 11:22:25] Entrenando XGBoost...
+[2026-09-01 11:22:25] XGBoost entrenado en 0.08s
+[2026-09-01 11:22:25] Entrenando SVM...
+[2026-09-01 11:22:25] SVM entrenado en 0.02s
+[2026-09-01 11:22:25] ⚠️ TensorFlow no disponible, usando fallback sklearn para CNN-LSTM (simulado híbrido)...
+[2026-09-01 11:22:25] CNN-LSTM (fallback RF) entrenado en 0.17s - simula arquitectura híbrida
+[2026-09-01 11:22:25] ⚠️ TensorFlow no disponible, usando fallback PCA+RF para LSTM-AE+RF (simulado híbrido)...
+[2026-09-01 11:22:25] LSTM-AE+RF (fallback PCA+RF, var=88.40%) entrenado en 0.16s
+[2026-09-01 11:22:25] 
+============================================================
+[2026-09-01 11:22:25] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-01 11:22:25] ============================================================
+[2026-09-01 11:22:25] 
+📊 RANDOM_FOREST:
+[2026-09-01 11:22:25]    Accuracy: 1.0000
+[2026-09-01 11:22:25]    F1-Score: 1.0000
+[2026-09-01 11:22:25]    AUC-ROC:  1.0000
+[2026-09-01 11:22:25]    Inferencia: 0.73 ms
+[2026-09-01 11:22:25] 
+📊 XGBOOST:
+[2026-09-01 11:22:25]    Accuracy: 0.9565
+[2026-09-01 11:22:25]    F1-Score: 0.9575
+[2026-09-01 11:22:25]    AUC-ROC:  1.0000
+[2026-09-01 11:22:25]    Inferencia: 0.06 ms
+[2026-09-01 11:22:25] 
+📊 SVM:
+[2026-09-01 11:22:25]    Accuracy: 0.7826
+[2026-09-01 11:22:25]    F1-Score: 0.7758
+[2026-09-01 11:22:25]    AUC-ROC:  0.8775
+[2026-09-01 11:22:25]    Inferencia: 0.06 ms
+[2026-09-01 11:22:25] 
+📊 CNN_LSTM:
+[2026-09-01 11:22:25]    Accuracy: 0.8261
+[2026-09-01 11:22:25]    F1-Score: 0.7474
+[2026-09-01 11:22:25]    AUC-ROC:  0.9868
+[2026-09-01 11:22:25]    Inferencia: 3.58 ms
+[2026-09-01 11:22:25] 
+📊 LSTM_AE_RF:
+[2026-09-01 11:22:25]    Accuracy: 0.8043
+[2026-09-01 11:22:25]    F1-Score: 0.7945
+[2026-09-01 11:22:25]    AUC-ROC:  0.8615
+[2026-09-01 11:22:25]    Inferencia: 1.32 ms
+[2026-09-01 11:22:25] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:22:25]    Puntuación general: 0.9011
+[2026-09-01 11:22:30] MotorPredictivo inicializado - 2026-09-01 11:22:30
+[2026-09-01 11:22:30] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:22:32] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:22:32] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:22:32] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:22:32] ============================================================
+[2026-09-01 11:22:32] INICIANDO ENTRENAMIENTO DE 5 ALGORITMOS
+[2026-09-01 11:22:32] ============================================================
+[2026-09-01 11:22:32] Entrenando Random Forest...
+[2026-09-01 11:22:32] Random Forest entrenado en 0.09s
+[2026-09-01 11:22:32] Entrenando XGBoost...
+[2026-09-01 11:22:32] XGBoost entrenado en 0.07s
+[2026-09-01 11:22:32] Entrenando SVM...
+[2026-09-01 11:22:32] SVM entrenado en 0.02s
+[2026-09-01 11:22:32] ⚠️ TensorFlow no disponible, usando fallback sklearn para CNN-LSTM (simulado híbrido)...
+[2026-09-01 11:22:32] CNN-LSTM (fallback RF) entrenado en 0.17s - simula arquitectura híbrida
+[2026-09-01 11:22:32] ⚠️ TensorFlow no disponible, usando fallback PCA+RF para LSTM-AE+RF (simulado híbrido)...
+[2026-09-01 11:22:32] LSTM-AE+RF (fallback PCA+RF, var=88.40%) entrenado en 0.16s
+[2026-09-01 11:22:32] 
+✅ Entrenamiento completado: 5 algoritmos listos
+[2026-09-01 11:22:32] 
+============================================================
+[2026-09-01 11:22:32] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-01 11:22:32] ============================================================
+[2026-09-01 11:22:32] 
+📊 RANDOM_FOREST:
+[2026-09-01 11:22:32]    Accuracy: 1.0000
+[2026-09-01 11:22:32]    F1-Score: 1.0000
+[2026-09-01 11:22:32]    AUC-ROC:  1.0000
+[2026-09-01 11:22:32]    Inferencia: 0.79 ms
+[2026-09-01 11:22:32] 
+📊 XGBOOST:
+[2026-09-01 11:22:32]    Accuracy: 0.9565
+[2026-09-01 11:22:32]    F1-Score: 0.9575
+[2026-09-01 11:22:32]    AUC-ROC:  1.0000
+[2026-09-01 11:22:32]    Inferencia: 0.03 ms
+[2026-09-01 11:22:32] 
+📊 SVM:
+[2026-09-01 11:22:32]    Accuracy: 0.7826
+[2026-09-01 11:22:32]    F1-Score: 0.7758
+[2026-09-01 11:22:32]    AUC-ROC:  0.8775
+[2026-09-01 11:22:32]    Inferencia: 0.03 ms
+[2026-09-01 11:22:33] 
+📊 CNN_LSTM:
+[2026-09-01 11:22:33]    Accuracy: 0.8261
+[2026-09-01 11:22:33]    F1-Score: 0.7474
+[2026-09-01 11:22:33]    AUC-ROC:  0.9868
+[2026-09-01 11:22:33]    Inferencia: 3.56 ms
+[2026-09-01 11:22:33] 
+📊 LSTM_AE_RF:
+[2026-09-01 11:22:33]    Accuracy: 0.8043
+[2026-09-01 11:22:33]    F1-Score: 0.7945
+[2026-09-01 11:22:33]    AUC-ROC:  0.8615
+[2026-09-01 11:22:33]    Inferencia: 1.34 ms
+[2026-09-01 11:22:33] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:22:33]    Puntuación general: 0.9015
+[2026-09-01 11:22:33] Modelos guardados en: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:22:33] MotorPredictivo inicializado - 2026-09-01 11:22:33
+[2026-09-01 11:22:33] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:22:33] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 11:25:46] MotorPredictivo inicializado - 2026-09-01 11:25:46
+[2026-09-01 11:25:46] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:25:46] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 11:25:46] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:25:46] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:25:46]    Puntuación general: 0.9015
+[2026-09-01 11:26:03] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:26:05] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:26:05] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:26:05] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:26:05] Entrenando Random Forest...
+[2026-09-01 11:26:05] Random Forest entrenado en 0.17s
+[2026-09-01 11:26:05] Entrenando XGBoost...
+[2026-09-01 11:26:05] XGBoost entrenado en 0.11s
+[2026-09-01 11:26:05] Entrenando SVM...
+[2026-09-01 11:26:05] SVM entrenado en 0.02s
+[2026-09-01 11:26:05] ⚠️ TensorFlow no disponible, usando fallback sklearn para CNN-LSTM (simulado híbrido)...
+[2026-09-01 11:26:05] CNN-LSTM (fallback RF) entrenado en 0.20s - simula arquitectura híbrida
+[2026-09-01 11:26:05] ⚠️ TensorFlow no disponible, usando fallback PCA+RF para LSTM-AE+RF (simulado híbrido)...
+[2026-09-01 11:26:06] LSTM-AE+RF (fallback PCA+RF, var=88.40%) entrenado en 0.25s
+[2026-09-01 11:26:06] 
+============================================================
+[2026-09-01 11:26:06] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-01 11:26:06] ============================================================
+[2026-09-01 11:26:06] 
+📊 RANDOM_FOREST:
+[2026-09-01 11:26:06]    Accuracy: 1.0000
+[2026-09-01 11:26:06]    F1-Score: 1.0000
+[2026-09-01 11:26:06]    AUC-ROC:  1.0000
+[2026-09-01 11:26:06]    Inferencia: 1.56 ms
+[2026-09-01 11:26:06] 
+📊 XGBOOST:
+[2026-09-01 11:26:06]    Accuracy: 0.9565
+[2026-09-01 11:26:06]    F1-Score: 0.9575
+[2026-09-01 11:26:06]    AUC-ROC:  1.0000
+[2026-09-01 11:26:06]    Inferencia: 0.04 ms
+[2026-09-01 11:26:06] 
+📊 SVM:
+[2026-09-01 11:26:06]    Accuracy: 0.7826
+[2026-09-01 11:26:06]    F1-Score: 0.7758
+[2026-09-01 11:26:06]    AUC-ROC:  0.8775
+[2026-09-01 11:26:06]    Inferencia: 0.04 ms
+[2026-09-01 11:26:06] 
+📊 CNN_LSTM:
+[2026-09-01 11:26:06]    Accuracy: 0.8261
+[2026-09-01 11:26:06]    F1-Score: 0.7474
+[2026-09-01 11:26:06]    AUC-ROC:  0.9868
+[2026-09-01 11:26:06]    Inferencia: 2.99 ms
+[2026-09-01 11:26:06] 
+📊 LSTM_AE_RF:
+[2026-09-01 11:26:06]    Accuracy: 0.8043
+[2026-09-01 11:26:06]    F1-Score: 0.7945
+[2026-09-01 11:26:06]    AUC-ROC:  0.8615
+[2026-09-01 11:26:06]    Inferencia: 2.11 ms
+[2026-09-01 11:26:06] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:26:06]    Puntuación general: 0.9015
+[2026-09-01 11:26:06] Modelos guardados en: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:26:21] EDA completado: 13 variables analizadas
+[2026-09-01 11:26:34] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:26:34] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:26:34] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:26:34] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:26:34] Entrenando Random Forest...
+[2026-09-01 11:26:35] Random Forest entrenado en 0.15s
+[2026-09-01 11:26:35] Entrenando XGBoost...
+[2026-09-01 11:26:35] XGBoost entrenado en 0.12s
+[2026-09-01 11:26:35] Entrenando SVM...
+[2026-09-01 11:26:35] SVM entrenado en 0.02s
+[2026-09-01 11:26:35] ⚠️ TensorFlow no disponible, usando fallback sklearn para CNN-LSTM (simulado híbrido)...
+[2026-09-01 11:26:35] CNN-LSTM (fallback RF) entrenado en 0.21s - simula arquitectura híbrida
+[2026-09-01 11:26:35] ⚠️ TensorFlow no disponible, usando fallback PCA+RF para LSTM-AE+RF (simulado híbrido)...
+[2026-09-01 11:26:35] LSTM-AE+RF (fallback PCA+RF, var=88.40%) entrenado en 0.26s
+[2026-09-01 11:26:35] 
+============================================================
+[2026-09-01 11:26:35] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-01 11:26:35] ============================================================
+[2026-09-01 11:26:35] 
+📊 RANDOM_FOREST:
+[2026-09-01 11:26:35]    Accuracy: 1.0000
+[2026-09-01 11:26:35]    F1-Score: 1.0000
+[2026-09-01 11:26:35]    AUC-ROC:  1.0000
+[2026-09-01 11:26:35]    Inferencia: 1.55 ms
+[2026-09-01 11:26:35] 
+📊 XGBOOST:
+[2026-09-01 11:26:35]    Accuracy: 0.9565
+[2026-09-01 11:26:35]    F1-Score: 0.9575
+[2026-09-01 11:26:35]    AUC-ROC:  1.0000
+[2026-09-01 11:26:35]    Inferencia: 0.04 ms
+[2026-09-01 11:26:35] 
+📊 SVM:
+[2026-09-01 11:26:35]    Accuracy: 0.7826
+[2026-09-01 11:26:35]    F1-Score: 0.7758
+[2026-09-01 11:26:35]    AUC-ROC:  0.8775
+[2026-09-01 11:26:35]    Inferencia: 0.04 ms
+[2026-09-01 11:26:35] 
+📊 CNN_LSTM:
+[2026-09-01 11:26:35]    Accuracy: 0.8261
+[2026-09-01 11:26:35]    F1-Score: 0.7474
+[2026-09-01 11:26:35]    AUC-ROC:  0.9868
+[2026-09-01 11:26:35]    Inferencia: 3.38 ms
+[2026-09-01 11:26:35] 
+📊 LSTM_AE_RF:
+[2026-09-01 11:26:35]    Accuracy: 0.8043
+[2026-09-01 11:26:35]    F1-Score: 0.7945
+[2026-09-01 11:26:35]    AUC-ROC:  0.8615
+[2026-09-01 11:26:35]    Inferencia: 2.27 ms
+[2026-09-01 11:26:35] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:26:35]    Puntuación general: 0.9015
+[2026-09-01 11:26:36] Modelos guardados en: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:27:45] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:27:45] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:27:45] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:27:45] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:27:45] Entrenando Random Forest...
+[2026-09-01 11:27:45] Random Forest entrenado en 0.15s
+[2026-09-01 11:27:45] Entrenando XGBoost...
+[2026-09-01 11:27:45] XGBoost entrenado en 0.11s
+[2026-09-01 11:27:45] Entrenando SVM...
+[2026-09-01 11:27:45] SVM entrenado en 0.02s
+[2026-09-01 11:27:45] 
+============================================================
+[2026-09-01 11:27:45] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-01 11:27:45] ============================================================
+[2026-09-01 11:27:45] 
+📊 RANDOM_FOREST:
+[2026-09-01 11:27:45]    Accuracy: 1.0000
+[2026-09-01 11:27:45]    F1-Score: 1.0000
+[2026-09-01 11:27:45]    AUC-ROC:  1.0000
+[2026-09-01 11:27:45]    Inferencia: 1.54 ms
+[2026-09-01 11:27:45] 
+📊 XGBOOST:
+[2026-09-01 11:27:45]    Accuracy: 0.9565
+[2026-09-01 11:27:45]    F1-Score: 0.9575
+[2026-09-01 11:27:45]    AUC-ROC:  1.0000
+[2026-09-01 11:27:45]    Inferencia: 0.04 ms
+[2026-09-01 11:27:45] 
+📊 SVM:
+[2026-09-01 11:27:45]    Accuracy: 0.7826
+[2026-09-01 11:27:45]    F1-Score: 0.7758
+[2026-09-01 11:27:45]    AUC-ROC:  0.8775
+[2026-09-01 11:27:45]    Inferencia: 0.05 ms
+[2026-09-01 11:27:45] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:27:45]    Puntuación general: 0.9015
+[2026-09-01 11:27:45] Modelos guardados en: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:32:00] MotorPredictivo inicializado - 2026-09-01 11:32:00
+[2026-09-01 11:32:00] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:32:01] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:32:01] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:32:01] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:32:01] Entrenando Random Forest...
+[2026-09-01 11:32:01] Random Forest entrenado en 0.11s
+[2026-09-01 11:32:01] Entrenando XGBoost...
+[2026-09-01 11:32:02] XGBoost entrenado en 0.11s
+[2026-09-01 11:32:02] Entrenando SVM...
+[2026-09-01 11:32:02] SVM entrenado en 0.02s
+[2026-09-01 11:32:02] ⚠️ TensorFlow no disponible, usando fallback sklearn para CNN-LSTM (simulado híbrido)...
+[2026-09-01 11:32:02] CNN-LSTM (fallback RF) entrenado en 0.17s - simula arquitectura híbrida
+[2026-09-01 11:32:02] ⚠️ TensorFlow no disponible, usando fallback PCA+RF para LSTM-AE+RF (simulado híbrido)...
+[2026-09-01 11:32:02] LSTM-AE+RF (fallback PCA+RF, var=88.40%) entrenado en 0.15s
+[2026-09-01 11:32:02] 
+============================================================
+[2026-09-01 11:32:02] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-01 11:32:02] ============================================================
+[2026-09-01 11:32:02] 
+📊 RANDOM_FOREST:
+[2026-09-01 11:32:02]    Accuracy: 1.0000
+[2026-09-01 11:32:02]    F1-Score: 1.0000
+[2026-09-01 11:32:02]    AUC-ROC:  1.0000
+[2026-09-01 11:32:02]    Inferencia: 0.74 ms
+[2026-09-01 11:32:02] 
+📊 XGBOOST:
+[2026-09-01 11:32:02]    Accuracy: 0.9565
+[2026-09-01 11:32:02]    F1-Score: 0.9575
+[2026-09-01 11:32:02]    AUC-ROC:  1.0000
+[2026-09-01 11:32:02]    Inferencia: 0.03 ms
+[2026-09-01 11:32:02] 
+📊 SVM:
+[2026-09-01 11:32:02]    Accuracy: 0.7826
+[2026-09-01 11:32:02]    F1-Score: 0.7758
+[2026-09-01 11:32:02]    AUC-ROC:  0.8775
+[2026-09-01 11:32:02]    Inferencia: 0.05 ms
+[2026-09-01 11:32:02] 
+📊 CNN_LSTM:
+[2026-09-01 11:32:02]    Accuracy: 0.8261
+[2026-09-01 11:32:02]    F1-Score: 0.7474
+[2026-09-01 11:32:02]    AUC-ROC:  0.9868
+[2026-09-01 11:32:02]    Inferencia: 2.92 ms
+[2026-09-01 11:32:02] 
+📊 LSTM_AE_RF:
+[2026-09-01 11:32:02]    Accuracy: 0.8043
+[2026-09-01 11:32:02]    F1-Score: 0.7945
+[2026-09-01 11:32:02]    AUC-ROC:  0.8615
+[2026-09-01 11:32:02]    Inferencia: 1.57 ms
+[2026-09-01 11:32:02] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:32:02]    Puntuación general: 0.9015
+[2026-09-01 11:32:43] MotorPredictivo inicializado - 2026-09-01 11:32:43
+[2026-09-01 11:32:43] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:32:43] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 11:32:43] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:32:43] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:32:43]    Puntuación general: 0.9015
+[2026-09-01 11:32:52] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:32:53] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:32:53] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:32:53] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:32:53] Entrenando Random Forest...
+[2026-09-01 11:32:53] Random Forest entrenado en 0.14s
+[2026-09-01 11:32:53] Entrenando XGBoost...
+[2026-09-01 11:32:53] XGBoost entrenado en 0.12s
+[2026-09-01 11:32:53] Entrenando SVM...
+[2026-09-01 11:32:53] SVM entrenado en 0.02s
+[2026-09-01 11:32:53] ⚠️ TensorFlow no disponible, usando fallback sklearn para CNN-LSTM (simulado híbrido)...
+[2026-09-01 11:32:54] CNN-LSTM (fallback RF) entrenado en 0.21s - simula arquitectura híbrida
+[2026-09-01 11:32:54] ⚠️ TensorFlow no disponible, usando fallback PCA+RF para LSTM-AE+RF (simulado híbrido)...
+[2026-09-01 11:32:54] LSTM-AE+RF (fallback PCA+RF, var=88.40%) entrenado en 0.26s
+[2026-09-01 11:32:54] 
+============================================================
+[2026-09-01 11:32:54] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-01 11:32:54] ============================================================
+[2026-09-01 11:32:54] 
+📊 RANDOM_FOREST:
+[2026-09-01 11:32:54]    Accuracy: 1.0000
+[2026-09-01 11:32:54]    F1-Score: 1.0000
+[2026-09-01 11:32:54]    AUC-ROC:  1.0000
+[2026-09-01 11:32:54]    Inferencia: 1.46 ms
+[2026-09-01 11:32:54] 
+📊 XGBOOST:
+[2026-09-01 11:32:54]    Accuracy: 0.9565
+[2026-09-01 11:32:54]    F1-Score: 0.9575
+[2026-09-01 11:32:54]    AUC-ROC:  1.0000
+[2026-09-01 11:32:54]    Inferencia: 0.04 ms
+[2026-09-01 11:32:54] 
+📊 SVM:
+[2026-09-01 11:32:54]    Accuracy: 0.7826
+[2026-09-01 11:32:54]    F1-Score: 0.7758
+[2026-09-01 11:32:54]    AUC-ROC:  0.8775
+[2026-09-01 11:32:54]    Inferencia: 0.04 ms
+[2026-09-01 11:32:54] 
+📊 CNN_LSTM:
+[2026-09-01 11:32:54]    Accuracy: 0.8261
+[2026-09-01 11:32:54]    F1-Score: 0.7474
+[2026-09-01 11:32:54]    AUC-ROC:  0.9868
+[2026-09-01 11:32:54]    Inferencia: 3.53 ms
+[2026-09-01 11:32:54] 
+📊 LSTM_AE_RF:
+[2026-09-01 11:32:54]    Accuracy: 0.8043
+[2026-09-01 11:32:54]    F1-Score: 0.7945
+[2026-09-01 11:32:54]    AUC-ROC:  0.8615
+[2026-09-01 11:32:54]    Inferencia: 2.20 ms
+[2026-09-01 11:32:54] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:32:54]    Puntuación general: 0.9015
+[2026-09-01 11:32:54] Modelos guardados en: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:33:05] EDA completado: 13 variables analizadas
+[2026-09-01 11:33:14] EDA completado: 13 variables analizadas
+[2026-09-01 11:33:18] EDA completado: 13 variables analizadas
+[2026-09-01 11:33:38] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:33:38] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:33:38] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:33:38] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:33:38] Entrenando Random Forest...
+[2026-09-01 11:33:38] Random Forest entrenado en 0.15s
+[2026-09-01 11:33:38] Entrenando XGBoost...
+[2026-09-01 11:33:38] XGBoost entrenado en 0.12s
+[2026-09-01 11:33:38] Entrenando SVM...
+[2026-09-01 11:33:38] SVM entrenado en 0.02s
+[2026-09-01 11:33:38] ⚠️ TensorFlow no disponible, usando fallback sklearn para CNN-LSTM (simulado híbrido)...
+[2026-09-01 11:33:38] CNN-LSTM (fallback RF) entrenado en 0.21s - simula arquitectura híbrida
+[2026-09-01 11:33:38] ⚠️ TensorFlow no disponible, usando fallback PCA+RF para LSTM-AE+RF (simulado híbrido)...
+[2026-09-01 11:33:39] LSTM-AE+RF (fallback PCA+RF, var=88.40%) entrenado en 0.27s
+[2026-09-01 11:33:39] 
+============================================================
+[2026-09-01 11:33:39] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-01 11:33:39] ============================================================
+[2026-09-01 11:33:39] 
+📊 RANDOM_FOREST:
+[2026-09-01 11:33:39]    Accuracy: 1.0000
+[2026-09-01 11:33:39]    F1-Score: 1.0000
+[2026-09-01 11:33:39]    AUC-ROC:  1.0000
+[2026-09-01 11:33:39]    Inferencia: 1.64 ms
+[2026-09-01 11:33:39] 
+📊 XGBOOST:
+[2026-09-01 11:33:39]    Accuracy: 0.9565
+[2026-09-01 11:33:39]    F1-Score: 0.9575
+[2026-09-01 11:33:39]    AUC-ROC:  1.0000
+[2026-09-01 11:33:39]    Inferencia: 0.04 ms
+[2026-09-01 11:33:39] 
+📊 SVM:
+[2026-09-01 11:33:39]    Accuracy: 0.7826
+[2026-09-01 11:33:39]    F1-Score: 0.7758
+[2026-09-01 11:33:39]    AUC-ROC:  0.8775
+[2026-09-01 11:33:39]    Inferencia: 0.04 ms
+[2026-09-01 11:33:39] 
+📊 CNN_LSTM:
+[2026-09-01 11:33:39]    Accuracy: 0.8261
+[2026-09-01 11:33:39]    F1-Score: 0.7474
+[2026-09-01 11:33:39]    AUC-ROC:  0.9868
+[2026-09-01 11:33:39]    Inferencia: 3.65 ms
+[2026-09-01 11:33:39] 
+📊 LSTM_AE_RF:
+[2026-09-01 11:33:39]    Accuracy: 0.8043
+[2026-09-01 11:33:39]    F1-Score: 0.7945
+[2026-09-01 11:33:39]    AUC-ROC:  0.8615
+[2026-09-01 11:33:39]    Inferencia: 2.10 ms
+[2026-09-01 11:33:39] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:33:39]    Puntuación general: 0.9015
+[2026-09-01 11:33:39] Modelos guardados en: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:40:43] MotorPredictivo inicializado - 2026-09-01 11:40:43
+[2026-09-01 11:40:43] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:40:44] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:40:44] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:40:44] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:40:52] MotorPredictivo inicializado - 2026-09-01 11:40:52
+[2026-09-01 11:40:52] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:40:54] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:40:54] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:40:54] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:41:45] MotorPredictivo inicializado - 2026-09-01 11:41:45
+[2026-09-01 11:41:45] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:41:45] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 11:41:45] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:41:56] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:41:56] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:41:56] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:41:56] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:41:56]    Puntuación general: 0.9015
+[2026-09-01 11:44:39] MotorPredictivo inicializado - 2026-09-01 11:44:39
+[2026-09-01 11:44:39] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:44:41] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:44:41] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:44:41] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:48:26] MotorPredictivo inicializado - 2026-09-01 11:48:26
+[2026-09-01 11:48:26] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 11:48:26] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 11:48:26] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 11:48:36] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 11:48:36] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 11:48:36] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 11:48:37] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 11:48:37]    Puntuación general: 0.9015
+[2026-09-01 11:48:41] EDA completado: 13 variables analizadas
+[2026-09-01 12:01:08] MotorPredictivo inicializado - 2026-09-01 12:01:08
+[2026-09-01 12:01:08] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 12:01:08] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 12:01:08] Datos cargados: 301 registros, 25 columnas
+[2026-09-01 12:01:08] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 12:01:08]    Puntuación general: 0.9015
+[2026-09-01 12:01:27] SMOTE aplicado: 210 → 326 muestras
+[2026-09-01 12:01:27] Datos preparados: Train=210, Val=45, Test=46
+[2026-09-01 12:01:27] Secuencias LSTM: Train=187, Val=22, Test=23
+[2026-09-01 12:01:29] EDA completado: 13 variables analizadas
+[2026-09-01 12:20:14] MotorPredictivo inicializado - 2026-09-01 12:20:14
+[2026-09-01 12:20:15] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 12:20:15] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 12:20:15] Datos cargados: 305 registros, 25 columnas
+[2026-09-01 12:20:15] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 12:20:15]    Puntuación general: 0.9015
+[2026-09-01 12:20:22] EDA completado: 13 variables analizadas
+[2026-09-01 12:20:22] SMOTE aplicado: 213 → 332 muestras
+[2026-09-01 12:20:22] Datos preparados: Train=213, Val=45, Test=47
+[2026-09-01 12:20:22] Secuencias LSTM: Train=190, Val=22, Test=24
+[2026-09-01 12:28:33] MotorPredictivo inicializado - 2026-09-01 12:28:33
+[2026-09-01 12:28:33] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 12:28:33] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 12:28:33] Datos cargados: 305 registros, 25 columnas
+[2026-09-01 12:28:33] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 12:28:33]    Puntuación general: 0.9015
+[2026-09-01 12:38:41] MotorPredictivo inicializado - 2026-09-01 12:38:41
+[2026-09-01 12:38:41] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 12:38:41] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 12:38:41] Datos cargados: 305 registros, 25 columnas
+[2026-09-01 12:42:47] MotorPredictivo inicializado - 2026-09-01 12:42:47
+[2026-09-01 12:42:47] Modelos cargados exitosamente desde: C:\Users\Sistemas\Documents\gemelo_digital_minero\models
+[2026-09-01 12:42:47] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-01 12:42:47] Datos cargados: 305 registros, 25 columnas
+[2026-09-01 12:42:47] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-01 12:42:47]    Puntuación general: 0.9015
+[2026-09-03 08:05:52] MotorPredictivo inicializado - 2026-09-03 08:05:52
+[2026-09-03 08:05:53] Error al cargar modelos: No module named 'xgboost'
+[2026-09-03 08:05:53] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:06:26] MotorPredictivo inicializado - 2026-09-03 08:06:26
+[2026-09-03 08:06:26] Error al cargar modelos: No module named 'xgboost'
+[2026-09-03 08:06:26] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:10:58] MotorPredictivo inicializado - 2026-09-03 08:10:58
+[2026-09-03 08:10:58] Error al cargar modelos: No module named 'xgboost'
+[2026-09-03 08:10:58] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:11:15] MotorPredictivo inicializado - 2026-09-03 08:11:15
+[2026-09-03 08:11:15] Error al cargar modelos: No module named 'xgboost'
+[2026-09-03 08:11:15] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:15:08] MotorPredictivo inicializado - 2026-09-03 08:15:08
+[2026-09-03 08:15:08] Error al cargar modelos: No module named 'xgboost'
+[2026-09-03 08:22:26] MotorPredictivo inicializado - 2026-09-03 08:22:26
+[2026-09-03 08:22:26] Modelos cargados exitosamente desde: C:\Users\Sistemas\Downloads\gemelo_digital_minero\gemelo_digital_minero\models
+[2026-09-03 08:22:26] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-03 08:22:26] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:22:27] Datos preparados: Train=213, Val=45, Test=47
+[2026-09-03 08:22:27] Secuencias LSTM: Train=190, Val=22, Test=24
+[2026-09-03 08:26:03] MotorPredictivo inicializado - 2026-09-03 08:26:03
+[2026-09-03 08:26:03] Modelos cargados exitosamente desde: C:\Users\Sistemas\Downloads\gemelo_digital_minero\gemelo_digital_minero\models
+[2026-09-03 08:26:03] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-03 08:26:03] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:29:47] MotorPredictivo inicializado - 2026-09-03 08:29:47
+[2026-09-03 08:29:47] Modelos cargados exitosamente desde: C:\Users\Sistemas\Downloads\gemelo_digital_minero\gemelo_digital_minero\models
+[2026-09-03 08:29:47] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-03 08:29:47] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:29:47] SMOTE aplicado: 213 → 332 muestras
+[2026-09-03 08:29:47] Datos preparados: Train=213, Val=45, Test=47
+[2026-09-03 08:29:47] Secuencias LSTM: Train=190, Val=22, Test=24
+[2026-09-03 08:29:47] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-03 08:29:47]    Puntuación general: 0.9015
+[2026-09-03 08:30:07] MotorPredictivo inicializado - 2026-09-03 08:30:07
+[2026-09-03 08:30:07] 🏆 Test emoji with restricted console
+[2026-09-03 08:30:59] MotorPredictivo inicializado - 2026-09-03 08:30:59
+[2026-09-03 08:30:59] Modelos cargados exitosamente desde: C:\Users\Sistemas\Downloads\gemelo_digital_minero\gemelo_digital_minero\models
+[2026-09-03 08:30:59] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-03 08:30:59] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:30:59] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-03 08:30:59]    Puntuación general: 0.9015
+[2026-09-03 08:33:44] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:33:44] SMOTE aplicado: 213 → 332 muestras
+[2026-09-03 08:33:44] Datos preparados: Train=213, Val=45, Test=47
+[2026-09-03 08:33:44] Secuencias LSTM: Train=190, Val=22, Test=24
+[2026-09-03 08:33:44] Entrenando Random Forest...
+[2026-09-03 08:33:44] Random Forest entrenado en 0.17s
+[2026-09-03 08:33:44] Entrenando XGBoost...
+[2026-09-03 08:33:44] XGBoost entrenado en 0.12s
+[2026-09-03 08:33:44] Entrenando SVM...
+[2026-09-03 08:33:44] SVM entrenado en 0.02s
+[2026-09-03 08:33:44] ⚠️ TensorFlow no disponible, usando fallback sklearn para CNN-LSTM (simulado híbrido)...
+[2026-09-03 08:33:44] CNN-LSTM (fallback RF) entrenado en 0.22s - simula arquitectura híbrida
+[2026-09-03 08:33:44] ⚠️ TensorFlow no disponible, usando fallback PCA+RF para LSTM-AE+RF (simulado híbrido)...
+[2026-09-03 08:33:45] LSTM-AE+RF (fallback PCA+RF, var=88.29%) entrenado en 0.28s
+[2026-09-03 08:33:45] 
+============================================================
+[2026-09-03 08:33:45] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-03 08:33:45] ============================================================
+[2026-09-03 08:33:45] 
+📊 RANDOM_FOREST:
+[2026-09-03 08:33:45]    Accuracy: 0.9574
+[2026-09-03 08:33:45]    F1-Score: 0.9566
+[2026-09-03 08:33:45]    AUC-ROC:  1.0000
+[2026-09-03 08:33:45]    Inferencia: 1.47 ms
+[2026-09-03 08:33:45] 
+📊 XGBOOST:
+[2026-09-03 08:33:45]    Accuracy: 0.9574
+[2026-09-03 08:33:45]    F1-Score: 0.9581
+[2026-09-03 08:33:45]    AUC-ROC:  1.0000
+[2026-09-03 08:33:45]    Inferencia: 0.04 ms
+[2026-09-03 08:33:45] 
+📊 SVM:
+[2026-09-03 08:33:45]    Accuracy: 0.6809
+[2026-09-03 08:33:45]    F1-Score: 0.6605
+[2026-09-03 08:33:45]    AUC-ROC:  0.8375
+[2026-09-03 08:33:45]    Inferencia: 0.05 ms
+[2026-09-03 08:33:45] 
+📊 CNN_LSTM:
+[2026-09-03 08:33:45]    Accuracy: 0.7083
+[2026-09-03 08:33:45]    F1-Score: 0.5874
+[2026-09-03 08:33:45]    AUC-ROC:  0.7227
+[2026-09-03 08:33:45]    Inferencia: 3.04 ms
+[2026-09-03 08:33:45] 
+📊 LSTM_AE_RF:
+[2026-09-03 08:33:45]    Accuracy: 0.7234
+[2026-09-03 08:33:45]    F1-Score: 0.7058
+[2026-09-03 08:33:45]    AUC-ROC:  0.8458
+[2026-09-03 08:33:45]    Inferencia: 1.94 ms
+[2026-09-03 08:33:45] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-03 08:33:45]    Puntuación general: 0.9016
+[2026-09-03 08:33:45] Modelos guardados en: C:\Users\Sistemas\Downloads\gemelo_digital_minero\gemelo_digital_minero\models
+[2026-09-03 08:34:13] Datos cargados: 305 registros, 25 columnas
+[2026-09-03 08:34:13] SMOTE aplicado: 213 → 332 muestras
+[2026-09-03 08:34:13] Datos preparados: Train=213, Val=45, Test=47
+[2026-09-03 08:34:13] Secuencias LSTM: Train=190, Val=22, Test=24
+[2026-09-03 08:34:13] Entrenando Random Forest...
+[2026-09-03 08:34:13] Random Forest entrenado en 0.17s
+[2026-09-03 08:34:13] Entrenando XGBoost...
+[2026-09-03 08:34:13] XGBoost entrenado en 0.12s
+[2026-09-03 08:34:13] Entrenando SVM...
+[2026-09-03 08:34:13] SVM entrenado en 0.02s
+[2026-09-03 08:34:13] ⚠️ TensorFlow no disponible, usando fallback sklearn para CNN-LSTM (simulado híbrido)...
+[2026-09-03 08:34:13] CNN-LSTM (fallback RF) entrenado en 0.22s - simula arquitectura híbrida
+[2026-09-03 08:34:13] ⚠️ TensorFlow no disponible, usando fallback PCA+RF para LSTM-AE+RF (simulado híbrido)...
+[2026-09-03 08:34:14] LSTM-AE+RF (fallback PCA+RF, var=88.29%) entrenado en 0.28s
+[2026-09-03 08:34:14] 
+============================================================
+[2026-09-03 08:34:14] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-03 08:34:14] ============================================================
+[2026-09-03 08:34:14] 
+📊 RANDOM_FOREST:
+[2026-09-03 08:34:14]    Accuracy: 0.9574
+[2026-09-03 08:34:14]    F1-Score: 0.9566
+[2026-09-03 08:34:14]    AUC-ROC:  1.0000
+[2026-09-03 08:34:14]    Inferencia: 1.44 ms
+[2026-09-03 08:34:14] 
+📊 XGBOOST:
+[2026-09-03 08:34:14]    Accuracy: 0.9574
+[2026-09-03 08:34:14]    F1-Score: 0.9581
+[2026-09-03 08:34:14]    AUC-ROC:  1.0000
+[2026-09-03 08:34:14]    Inferencia: 0.04 ms
+[2026-09-03 08:34:14] 
+📊 SVM:
+[2026-09-03 08:34:14]    Accuracy: 0.6809
+[2026-09-03 08:34:14]    F1-Score: 0.6605
+[2026-09-03 08:34:14]    AUC-ROC:  0.8375
+[2026-09-03 08:34:14]    Inferencia: 0.04 ms
+[2026-09-03 08:34:14] 
+📊 CNN_LSTM:
+[2026-09-03 08:34:14]    Accuracy: 0.7083
+[2026-09-03 08:34:14]    F1-Score: 0.5874
+[2026-09-03 08:34:14]    AUC-ROC:  0.7227
+[2026-09-03 08:34:14]    Inferencia: 2.94 ms
+[2026-09-03 08:34:14] 
+📊 LSTM_AE_RF:
+[2026-09-03 08:34:14]    Accuracy: 0.7234
+[2026-09-03 08:34:14]    F1-Score: 0.7058
+[2026-09-03 08:34:14]    AUC-ROC:  0.8458
+[2026-09-03 08:34:14]    Inferencia: 1.96 ms
+[2026-09-03 08:34:14] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-03 08:34:14]    Puntuación general: 0.9016
+[2026-09-03 08:34:14] Modelos guardados en: C:\Users\Sistemas\Downloads\gemelo_digital_minero\gemelo_digital_minero\models

@@ -1,0 +1,117 @@
+{
+  "random_forest": {
+    "algoritmo": "random_forest",
+    "accuracy": 0.9574,
+    "precision": 0.9599,
+    "recall": 0.9574,
+    "f1_score": 0.9566,
+    "auc_roc": 1.0,
+    "auc_pr": 1.0,
+    "tiempo_entrenamiento_s": 0.17,
+    "tiempo_inferencia_ms": 1.4449,
+    "matriz_confusion": [
+      [
+        32,
+        0
+      ],
+      [
+        2,
+        13
+      ]
+    ],
+    "interpretabilidad": 8,
+    "mantenibilidad": 9
+  },
+  "xgboost": {
+    "algoritmo": "xgboost",
+    "accuracy": 0.9574,
+    "precision": 0.9625,
+    "recall": 0.9574,
+    "f1_score": 0.9581,
+    "auc_roc": 1.0,
+    "auc_pr": 1.0,
+    "tiempo_entrenamiento_s": 0.12,
+    "tiempo_inferencia_ms": 0.0353,
+    "matriz_confusion": [
+      [
+        30,
+        2
+      ],
+      [
+        0,
+        15
+      ]
+    ],
+    "interpretabilidad": 7,
+    "mantenibilidad": 8
+  },
+  "svm": {
+    "algoritmo": "svm",
+    "accuracy": 0.6809,
+    "precision": 0.6564,
+    "recall": 0.6809,
+    "f1_score": 0.6605,
+    "auc_roc": 0.8375,
+    "auc_pr": 0.6888,
+    "tiempo_entrenamiento_s": 0.02,
+    "tiempo_inferencia_ms": 0.0442,
+    "matriz_confusion": [
+      [
+        27,
+        5
+      ],
+      [
+        10,
+        5
+      ]
+    ],
+    "interpretabilidad": 4,
+    "mantenibilidad": 6
+  },
+  "cnn_lstm": {
+    "algoritmo": "cnn_lstm",
+    "accuracy": 0.7083,
+    "precision": 0.5017,
+    "recall": 0.7083,
+    "f1_score": 0.5874,
+    "auc_roc": 0.7227,
+    "auc_pr": 0.5207,
+    "tiempo_entrenamiento_s": 0.22,
+    "tiempo_inferencia_ms": 2.9351,
+    "matriz_confusion": [
+      [
+        17,
+        0
+      ],
+      [
+        7,
+        0
+      ]
+    ],
+    "interpretabilidad": 2,
+    "mantenibilidad": 3
+  },
+  "lstm_ae_rf": {
+    "algoritmo": "lstm_ae_rf",
+    "accuracy": 0.7234,
+    "precision": 0.7067,
+    "recall": 0.7234,
+    "f1_score": 0.7058,
+    "auc_roc": 0.8458,
+    "auc_pr": 0.6376,
+    "tiempo_entrenamiento_s": 0.28,
+    "tiempo_inferencia_ms": 1.9646,
+    "matriz_confusion": [
+      [
+        28,
+        4
+      ],
+      [
+        9,
+        6
+      ]
+    ],
+    "interpretabilidad": 5,
+    "mantenibilidad": 4
+  }
+}
