@@ -38,7 +38,9 @@ warnings.filterwarnings('ignore')
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.svm import SVC, SVR
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
-from sklearn.model_selection import train_test_split, GridSearchCV, TimeSeriesSplit
+from sklearn.model_selection import (
+    train_test_split, GridSearchCV, RandomizedSearchCV, TimeSeriesSplit
+)
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score,
     roc_auc_score, average_precision_score, confusion_matrix,
@@ -336,6 +338,13 @@ class MotorPredictivo:
         cols_utiles = variables_sensores + ['equipo_id', 'fecha_hora']
         cols_existentes = [c for c in cols_utiles if c in df.columns]
         df = df[cols_existentes].copy()
+
+        # Eliminar lecturas repetidas antes de transformar o dividir los datos.
+        columnas_deduplicacion = [c for c in ['equipo_id', 'fecha_hora'] if c in df.columns]
+        if columnas_deduplicacion:
+            registros_antes = len(df)
+            df = df.drop_duplicates(subset=columnas_deduplicacion, keep='last')
+            self._log(f"Duplicados eliminados: {registros_antes - len(df)}")
         
         # Convertir fecha_hora
         if 'fecha_hora' in df.columns:
@@ -483,6 +492,44 @@ class MotorPredictivo:
         for i in range(ventana - 1, len(datos)):
             secuencias.append(datos[i - ventana + 1:i + 1])
         return np.array(secuencias)
+
+    def optimizar_random_forest(self, n_iter=10):
+        """Optimizar Random Forest mediante búsqueda aleatoria estratificada."""
+        if getattr(self, 'X_train_bal', None) is None or getattr(self, 'y_train_clas_bal', None) is None:
+            raise ValueError("Primero debe ejecutar preparar_datos()")
+
+        parametros = {
+            'n_estimators': [100, 200, 300, 500],
+            'max_depth': [None, 10, 20, 30],
+            'min_samples_split': [2, 5, 10],
+            'min_samples_leaf': [1, 2, 4],
+            'max_features': ['sqrt', 'log2', None],
+        }
+        modelo = RandomForestClassifier(
+            random_state=42, n_jobs=-1, class_weight='balanced'
+        )
+        busqueda = RandomizedSearchCV(
+            estimator=modelo,
+            param_distributions=parametros,
+            n_iter=max(1, n_iter),
+            scoring='f1',
+            cv=TimeSeriesSplit(n_splits=3),
+            random_state=42,
+            n_jobs=-1,
+            refit=True,
+        )
+        busqueda.fit(self.X_train_bal, self.y_train_clas_bal)
+        self.modelos['random_forest_optimizado'] = {
+            'modelo': busqueda.best_estimator_,
+            'tipo': 'clasificacion',
+            'mejores_parametros': busqueda.best_params_,
+            'mejor_puntuacion_cv': float(busqueda.best_score_),
+            'usa_secuencias': False,
+        }
+        self._log(
+            f"Random Search completado: F1 CV={busqueda.best_score_:.4f}"
+        )
+        return busqueda
 
     # ============================================================
     # FASE 4: MODELADO

@@ -25,7 +25,9 @@ def get_kpis():
     cursor.execute('''
     SELECT 
         AVG(CAST((julianday(fecha_fin) - julianday(fecha_inicio)) * 24 AS REAL)) as mttr,
-        (SELECT AVG(horas_operacion) FROM equipos) / NULLIF(COUNT(*), 0) as mtbf
+        (SELECT SUM(horas_operacion) FROM equipos) /
+            NULLIF((SELECT COUNT(*) FROM ordenes_trabajo
+                WHERE estado = 'Completada' AND tipo = 'Correctivo'), 0) as mtbf
     FROM ordenes_trabajo 
     WHERE estado = 'Completada' AND fecha_fin IS NOT NULL AND fecha_inicio IS NOT NULL
     ''')
@@ -34,7 +36,7 @@ def get_kpis():
     mtbf = mt['mtbf'] if mt['mtbf'] else 0
     
     # OEE (Overall Equipment Effectiveness) - simplificado
-    oee = disponibilidad * 0.85 * 0.90 / 100  # Disponibilidad * Rendimiento * Calidad
+    oee = disponibilidad * 0.85 * 0.90  # Disponibilidad * Rendimiento * Calidad
     
     # Costos de mantenimiento
     cursor.execute("SELECT SUM(costo_real) as total FROM ordenes_trabajo WHERE estado = 'Completada'")

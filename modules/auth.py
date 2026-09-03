@@ -4,9 +4,12 @@ Maneja el login, registro, gestión de roles y bitácora de accesos.
 """
 import jwt
 import datetime
+import os
 from utils.database import get_connection, verify_password, hash_password
 
-SECRET_KEY = "minera_gemelo_digital_2024_secret_key_jwt"
+SECRET_KEY = os.getenv('JWT_SECRET_KEY')
+if not SECRET_KEY:
+    SECRET_KEY = "minera_gemelo_digital_2024_secret_key_jwt"
 ALGORITHM = "HS256"
 TOKEN_EXPIRY_HOURS = 8
 
@@ -74,12 +77,15 @@ def register_user(username, password, nombre, apellido, email, rol, area=None):
     cursor = conn.cursor()
     
     try:
-        cursor.execute('''
+        insert_query = '''
         INSERT INTO usuarios (username, password_hash, nombre, apellido, email, rol, area)
         VALUES (?, ?, ?, ?, ?, ?, ?)
-        ''', (username, hash_password(password), nombre, apellido, email, rol, area))
+        '''
+        cursor.execute(insert_query, (username, hash_password(password), nombre, apellido, email, rol, area))
         conn.commit()
-        user_id = cursor.lastrowid
+        cursor.execute("SELECT id FROM usuarios WHERE username = ?", (username,))
+        inserted_user = cursor.fetchone()
+        user_id = inserted_user['id'] if inserted_user else None
         cursor.execute("INSERT INTO bitacora_accesos (usuario_id, accion, detalle) VALUES (?, ?, ?)",
                       (user_id, 'REGISTER', f'Usuario {username} registrado en el sistema'))
         conn.commit()

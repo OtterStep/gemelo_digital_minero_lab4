@@ -51,6 +51,9 @@ def actualizar_orden_trabajo(orden_id, datos):
         values.append(orden_id)
         query = f"UPDATE ordenes_trabajo SET {', '.join(fields)} WHERE id = ?"
         cursor.execute(query, values)
+        if cursor.rowcount == 0:
+            conn.close()
+            return False
         conn.commit()
     
     conn.close()
@@ -106,16 +109,20 @@ def registrar_historial(orden_id, equipo_id, tipo_trabajo, descripcion,
     conn = get_connection()
     cursor = conn.cursor()
     
-    cursor.execute('''
-    INSERT INTO historial_mantenimiento (orden_id, equipo_id, tipo_trabajo, descripcion,
-                                         repuestos_utilizados, horas_invertidas, tecnico_id, observaciones)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    ''', (orden_id, equipo_id, tipo_trabajo, descripcion, repuestos_utilizados,
-          horas_invertidas, tecnico_id, observaciones))
-    
-    conn.commit()
-    conn.close()
-    return True
+    try:
+        cursor.execute('''
+        INSERT INTO historial_mantenimiento (orden_id, equipo_id, tipo_trabajo, descripcion,
+                                             repuestos_utilizados, horas_invertidas, tecnico_id, observaciones)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (orden_id, equipo_id, tipo_trabajo, descripcion, repuestos_utilizados,
+              horas_invertidas, tecnico_id, observaciones))
+        conn.commit()
+        return True
+    except Exception:
+        conn.rollback()
+        return False
+    finally:
+        conn.close()
 
 def get_historial_mantenimiento(equipo_id=None):
     """Obtener historial de mantenimiento"""
@@ -150,19 +157,25 @@ def get_repuestos():
 
 def actualizar_stock_repuesto(repuesto_id, cantidad, operacion='restar'):
     """Actualizar stock de repuesto"""
+    if not isinstance(cantidad, (int, float)) or cantidad <= 0:
+        return False
+    if operacion not in ('restar', 'sumar'):
+        return False
+
     conn = get_connection()
     cursor = conn.cursor()
     
     if operacion == 'restar':
-        cursor.execute("UPDATE repuestos SET stock_actual = stock_actual - ? WHERE id = ?",
-                      (cantidad, repuesto_id))
-    elif operacion == 'sumar':
+        cursor.execute("UPDATE repuestos SET stock_actual = stock_actual - ? WHERE id = ? AND stock_actual >= ?",
+                      (cantidad, repuesto_id, cantidad))
+    else:
         cursor.execute("UPDATE repuestos SET stock_actual = stock_actual + ? WHERE id = ?",
                       (cantidad, repuesto_id))
     
+    actualizado = cursor.rowcount == 1
     conn.commit()
     conn.close()
-    return True
+    return actualizado
 
 def get_repuestos_bajo_stock():
     """Obtener repuestos con stock bajo el mínimo"""
@@ -226,8 +239,8 @@ def generar_ordenes_automaticas():
         horas = eq['ultimas_horas'] or eq['horas_operacion']
         ultimo_mant = eq['ultimo_mantenimiento']
         
-        # Si han pasado más de 500 horas desde el último mantenimiento o nunca se hizo
-        if horas > 0 and (ultimo_mant is None or horas % 500 < 10):
+        # Emitir la primera orden al llegar a 500 horas y repetir por intervalo.
+        if horas >= 500 and (ultimo_mant is None or horas % 500 < 10):
             # Verificar que no exista una orden pendiente similar
             cursor.execute('''
             SELECT COUNT(*) FROM ordenes_trabajo 

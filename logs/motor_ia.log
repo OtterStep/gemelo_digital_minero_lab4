@@ -1054,3 +1054,87 @@
 [2026-09-03 09:49:51] MotorPredictivo inicializado - 2026-09-03 09:49:51
 [2026-09-03 09:49:52] Modelos cargados exitosamente desde: C:\Users\Sistemas\Downloads\gemelo_digital_minero\gemelo_digital_minero\models
 [2026-09-03 09:49:52] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-03 14:21:17] MotorPredictivo inicializado - 2026-09-03 14:21:17
+[2026-09-03 14:21:18] Modelos cargados exitosamente desde: C:\Users\LENOVO\Documents\PROGRAMAS\gemelo_digital_minero_lab4\models
+[2026-09-03 14:21:18] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-03 14:21:19] Datos cargados: 30001 registros, 25 columnas
+[2026-09-03 14:21:19] 
+🏆 MEJOR ALGORITMO SELECCIONADO: XGBOOST
+[2026-09-03 14:21:19]    Puntuación general: 0.9096
+[2026-09-03 14:21:52] Datos cargados: 30001 registros, 25 columnas
+[2026-09-03 14:21:53] SMOTE aplicado: 21000 → 38004 muestras
+[2026-09-03 14:21:53] Datos preparados: Train=21000, Val=4500, Test=4501
+[2026-09-03 14:21:53] Secuencias LSTM: Train=20977, Val=4477, Test=4478
+[2026-09-03 14:21:53] Entrenando Random Forest...
+[2026-09-03 14:22:13] Random Forest entrenado en 19.82s
+[2026-09-03 14:22:13] Entrenando XGBoost...
+[2026-09-03 14:22:20] XGBoost entrenado en 6.83s
+[2026-09-03 14:22:20] Entrenando SVM...
+[2026-09-03 14:22:31] SVM entrenado en 10.85s
+[2026-09-03 14:22:31] Entrenando CNN-LSTM...
+[2026-09-03 14:30:24] MotorPredictivo inicializado - 2026-09-03 14:30:24
+[2026-09-03 14:33:16] CNN-LSTM entrenado en 644.83s
+[2026-09-03 14:33:16] Entrenando LSTM-Autoencoder + Random Forest...
+[2026-09-03 14:42:32] LSTM-AE + RF entrenado en 555.67s
+[2026-09-03 14:42:32] 
+============================================================
+[2026-09-03 14:42:32] EVALUACIÓN COMPARATIVA DE ALGORITMOS
+[2026-09-03 14:42:32] ============================================================
+[2026-09-03 14:42:32] 
+📊 RANDOM_FOREST:
+[2026-09-03 14:42:33]    Accuracy: 1.0000
+[2026-09-03 14:42:33]    F1-Score: 1.0000
+[2026-09-03 14:42:33]    AUC-ROC:  1.0000
+[2026-09-03 14:42:33]    Inferencia: 0.15 ms
+[2026-09-03 14:42:33] 
+📊 XGBOOST:
+[2026-09-03 14:42:33]    Accuracy: 0.9984
+[2026-09-03 14:42:33]    F1-Score: 0.9985
+[2026-09-03 14:42:33]    AUC-ROC:  1.0000
+[2026-09-03 14:42:33]    Inferencia: 0.04 ms
+[2026-09-03 14:42:38] 
+📊 SVM:
+[2026-09-03 14:42:38]    Accuracy: 0.9936
+[2026-09-03 14:42:38]    F1-Score: 0.9935
+[2026-09-03 14:42:38]    AUC-ROC:  0.9971
+[2026-09-03 14:42:38]    Inferencia: 1.05 ms
+[2026-09-03 14:42:47] 
+📊 CNN_LSTM:
+[2026-09-03 14:42:47]    Accuracy: 0.9933
+[2026-09-03 14:42:47]    F1-Score: 0.9933
+[2026-09-03 14:42:47]    AUC-ROC:  0.9976
+[2026-09-03 14:42:47]    Inferencia: 2.03 ms
+[2026-09-03 14:42:52] 
+📊 LSTM_AE_RF:
+[2026-09-03 14:42:52]    Accuracy: 0.8975
+[2026-09-03 14:42:52]    F1-Score: 0.8665
+[2026-09-03 14:42:52]    AUC-ROC:  0.5074
+[2026-09-03 14:42:52]    Inferencia: 1.22 ms
+[2026-09-03 14:42:52] 
+🏆 MEJOR ALGORITMO SELECCIONADO: RANDOM_FOREST
+[2026-09-03 14:42:53]    Puntuación general: 0.9313
+[2026-09-03 14:42:54] Modelos guardados en: C:\Users\LENOVO\Documents\PROGRAMAS\gemelo_digital_minero_lab4\models
+[2026-09-03 15:04:13] MotorPredictivo inicializado - 2026-09-03 15:04:13
+[2026-09-03 15:04:17] Modelos cargados exitosamente desde: C:\Users\LENOVO\Documents\PROGRAMAS\gemelo_digital_minero_lab4\models
+[2026-09-03 15:04:17] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-03 15:04:19] Datos cargados: 30001 registros, 25 columnas
+[2026-09-03 15:04:19] Duplicados eliminados: 0
+[2026-09-03 15:04:22] SMOTE aplicado: 21000 → 38004 muestras
+[2026-09-03 15:04:23] Datos preparados: Train=21000, Val=4500, Test=4501
+[2026-09-03 15:04:23] Secuencias LSTM: Train=20977, Val=4477, Test=4478
+[2026-09-03 15:09:10] MotorPredictivo inicializado - 2026-09-03 15:09:10
+[2026-09-03 15:09:10] Datos cargados: 300 registros, 25 columnas
+[2026-09-03 15:09:10] Duplicados eliminados: 294
+[2026-09-03 15:10:49] MotorPredictivo inicializado - 2026-09-03 15:10:49
+[2026-09-03 15:10:49] Datos cargados: 300 registros, 25 columnas
+[2026-09-03 15:10:49] Duplicados eliminados: 294
+[2026-09-03 15:12:56] MotorPredictivo inicializado - 2026-09-03 15:12:56
+[2026-09-03 15:12:56] Datos cargados: 300 registros, 25 columnas
+[2026-09-03 15:12:56] Duplicados eliminados: 294
+[2026-09-03 15:22:52] MotorPredictivo inicializado - 2026-09-03 15:22:52
+[2026-09-03 15:22:53] Modelos cargados exitosamente desde: C:\Users\LENOVO\Documents\PROGRAMAS\gemelo_digital_minero_lab4\models
+[2026-09-03 15:22:53] Algoritmos disponibles: ['random_forest', 'xgboost', 'svm', 'cnn_lstm', 'lstm_ae_rf']
+[2026-09-03 15:22:54] Datos cargados: 30007 registros, 25 columnas
+[2026-09-03 15:22:54] 
+🏆 MEJOR ALGORITMO SELECCIONADO: RANDOM_FOREST
+[2026-09-03 15:22:54]    Puntuación general: 0.9313

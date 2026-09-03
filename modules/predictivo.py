@@ -136,7 +136,11 @@ def predecir_falla_equipo(equipo_id):
     # Obtener información del equipo
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM equipos WHERE id = ?", (equipo_id,))
-    equipo = dict(cursor.fetchone())
+    fila_equipo = cursor.fetchone()
+    if not fila_equipo:
+        conn.close()
+        return None
+    equipo = dict(fila_equipo)
     
     conn.close()
     

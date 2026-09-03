@@ -186,7 +186,6 @@ def init_database():
     conn.commit()
     conn.close()
     print("Base de datos inicializada correctamente.")
-
 def hash_password(password):
     """Generar hash de contraseña"""
     return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')

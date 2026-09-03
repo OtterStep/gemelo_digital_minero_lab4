@@ -237,7 +237,11 @@ def simular_falla(equipo_id, tipo_falla, intensidad=0.7):
     cursor.execute('''
     SELECT * FROM datos_equipos WHERE equipo_id = ? ORDER BY fecha_hora DESC LIMIT 1
     ''', (equipo_id,))
-    ultimos = dict(cursor.fetchone())
+    fila = cursor.fetchone()
+    if not fila:
+        conn.close()
+        return None
+    ultimos = dict(fila)
     
     nuevos_datos = ultimos.copy()
     del nuevos_datos['id']
@@ -302,7 +306,11 @@ def generar_datos_en_tiempo_real(equipo_id):
     cursor.execute('''
     SELECT * FROM datos_equipos WHERE equipo_id = ? ORDER BY fecha_hora DESC LIMIT 1
     ''', (equipo_id,))
-    ultimos = dict(cursor.fetchone())
+    fila = cursor.fetchone()
+    if not fila:
+        conn.close()
+        return None
+    ultimos = dict(fila)
     
     nuevos_datos = ultimos.copy()
     del nuevos_datos['id']
