@@ -1,1 +1,23 @@
-/venv
+/venv/
+/venv312/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environments and configuration
+.env
+.env.*
+!.env.example
+
+# Test, coverage, and tool caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Local logs and generated reports
+logs/*
+!logs/.gitkeep

@@ -151,16 +151,19 @@ gemelo_digital_minero/
    cd gemelo_digital_minero
    ```
 
-2. **Crear entorno virtual (recomendado)**
+2. **Crear entorno virtual con Python 3.12 (recomendado para TensorFlow)**
    ```bash
    # Windows
-   python -m venv venv
-   venv\Scripts\activate
+   py -3.12 -m venv venv312
+   venv312\Scripts\activate
 
    # Linux/Mac
-   python3 -m venv venv
-   source venv/bin/activate
+   python3.12 -m venv venv312
+   source venv312/bin/activate
    ```
+   > **Importante:** Los modelos híbridos (CNN-LSTM y LSTM-Autoencoder) requieren
+   > **TensorFlow**, que solo está soportado hasta **Python 3.12**. Usa Python 3.12
+   > para habilitar el entrenamiento nativo de los híbridos (sin fallback simulado).
 
 3. **Instalar dependencias**
    ```bash
@@ -172,7 +175,16 @@ gemelo_digital_minero/
    streamlit run app.py
    ```
 
-5. **Acceder al sistema**
+5. **Ampliar el dataset (opcional)**
+   El repositorio incluye pocos cientos de registros reales, insuficientes para
+   las redes profundas. Para generar ~30.000 registros sintéticos realistas
+   (derivados de los rangos y umbrales de los sensores):
+   ```bash
+   python scripts/generar_datos_sinteticos.py 5000    # anexa 5000 por equipo
+   # o con --reemplazar para vaciar primero la tabla
+   ```
+
+6. **Acceder al sistema**
    - Abrir navegador en: `http://localhost:8501`
    - La base de datos se inicializa automáticamente con datos de demostración
 

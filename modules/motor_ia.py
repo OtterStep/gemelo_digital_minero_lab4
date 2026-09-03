@@ -68,7 +68,7 @@ try:
     TENSORFLOW_AVAILABLE = True
 except ImportError:
     TENSORFLOW_AVAILABLE = False
-    print("[WARN] TensorFlow no disponible. Instalar con: pip install tensorflow")
+    print("[WARN] TensorFlow no disponible. Usar el entorno venv312 (Python 3.12): pip install tensorflow-cpu")
 
 # Rutas
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -777,6 +777,7 @@ class MotorPredictivo:
         caracteristicas_latentes_test = encoder.predict(self.X_test_seq, verbose=0)
         
         # --- Etapa 2: Random Forest con características latentes ---
+        from sklearn.ensemble import RandomForestClassifier
         rf = RandomForestClassifier(
             n_estimators=hp['n_estimators_rf'],
             max_depth=15,

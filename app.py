@@ -1357,7 +1357,7 @@ def mostrar_motor_ia():
                     import tensorflow as tf
                     st.success("✅ TensorFlow disponible — entrenamiento nativo híbrido")
                 except ImportError:
-                    st.info("ℹ️ TensorFlow no instalado (Python 3.14 no soportado) — se usará **fallback sklearn**: RF sobre secuencias aplanadas que **simula** CNN-LSTM. Para TF nativo instala Python 3.11: `winget install Python.Python.3.11` + `pip install tensorflow`")
+                    st.info("ℹ️ TensorFlow no instalado — se usará **fallback sklearn**: RF sobre secuencias aplanadas que **simula** CNN-LSTM. Para TF nativo usa el entorno `venv312` (Python 3.12): `pip install tensorflow-cpu`")
         with col_b2:
             with st.container(border=True):
                 st.markdown("#### 5. 🔗 LSTM-Autoencoder + RF (Híbrido)")
@@ -1373,7 +1373,7 @@ def mostrar_motor_ia():
                     import tensorflow as tf
                     st.success("✅ TensorFlow disponible — entrenamiento nativo híbrido")
                 except ImportError:
-                    st.info("ℹ️ TensorFlow no instalado — se usará **fallback PCA(16)+RF** que **simula** LSTM-AE+RF (explica 85-90% varianza). Para TF nativo instala Python 3.11 + `pip install tensorflow`")
+                    st.info("ℹ️ TensorFlow no instalado — se usará **fallback PCA(16)+RF** que **simula** LSTM-AE+RF. Para TF nativo usa el entorno `venv312` (Python 3.12) + `pip install tensorflow-cpu`")
         
         st.markdown("---")
         
@@ -1694,7 +1694,7 @@ def mostrar_motor_ia():
                     import tensorflow as tf
                     st.success("✅ TensorFlow disponible — híbridos nativos")
                 except ImportError:
-                    st.info("ℹ️ Fallback activo: CNN-LSTM→RF sobre secuencias aplanadas | LSTM-AE+RF→PCA(16)+RF")
+                    st.info("ℹ️ Fallback activo (sin TensorFlow): CNN-LSTM→RF aplanado | LSTM-AE+RF→PCA(16)+RF. Usa `venv312` para arquitecturas nativas")
         
         col_op1, col_op2 = st.columns(2)
         
@@ -2026,7 +2026,7 @@ def mostrar_motor_ia():
         with tab_hyb:
             st.markdown("**CNN-LSTM:** `filtros_cnn=[32,64]`, `unidades_lstm=[50,100]`, `dropout=0.3`, `lr=0.001`, `epochs=50`, `batch=32`")
             st.markdown("**LSTM-AE+RF:** `unidades_lstm_ae=64`, `dim_latente=16`, `epochs_ae=30`, `batch=32`, `n_est_rf=200`")
-            st.caption("💡 **Interpretación Híbridos:** Híbridos requieren secuencias 24 pasos. Fallback sklearn simula sin TF. Edición requiere reiniciar entrenamiento completo.")
+            st.caption("💡 **Interpretación Híbridos:** Híbridos requieren secuencias 24 pasos. Con `venv312` (Python 3.12) TensorFlow entrena arquitecturas nativas (CNN-LSTM y LSTM-AE). Edición requiere reiniciar entrenamiento completo.")
         st.markdown("---")
         st.markdown("### 🔍 GridSearchCV Demo (búsqueda automática)")
         st.caption("💡 **Interpretación GridSearch:** Búsqueda exhaustiva sobre grid limitado (2-4 combos) para encontrar mejores hiperparámetros rápidamente. Usa StratifiedKFold 3 folds. Tiempo estimado: 10-30s para RF/XGB.")
