@@ -1271,26 +1271,40 @@ class MotorPredictivo:
                     modelo_path = os.path.join(dir_path, f'{nombre}.h5')
                     info_path = os.path.join(dir_path, f'{nombre}_info.joblib')
                     if os.path.exists(modelo_path):
-                        modelo = load_model(modelo_path, compile=False)
-                        info = joblib.load(info_path) if os.path.exists(info_path) else {}
-                        info['modelo'] = modelo
-                        info['usa_secuencias'] = True
-                        info['tipo'] = 'clasificacion'
-                        self.modelos[nombre] = info
+                        try:
+                            modelo = load_model(modelo_path, compile=False)
+                            info = joblib.load(info_path) if os.path.exists(info_path) else {}
+                            info['modelo'] = modelo
+                            info['usa_secuencias'] = True
+                            info['tipo'] = 'clasificacion'
+                            self.modelos[nombre] = info
+                        except Exception as e:
+                            self._log(f"No se pudo cargar {modelo_path}: {e}")
+                            fallback_path = os.path.join(dir_path, f'{nombre}.joblib')
+                            if os.path.exists(fallback_path):
+                                self.modelos[nombre] = joblib.load(fallback_path)
+                                self._log(f"Cargado respaldo joblib para {nombre}")
                 
                 elif nombre == 'lstm_ae_rf' and TENSORFLOW_AVAILABLE:
                     rf_path = os.path.join(dir_path, f'{nombre}_rf.joblib')
                     encoder_path = os.path.join(dir_path, f'{nombre}_encoder.h5')
                     if os.path.exists(rf_path) and os.path.exists(encoder_path):
-                        rf = joblib.load(rf_path)
-                        encoder = load_model(encoder_path, compile=False)
-                        info_path = os.path.join(dir_path, f'{nombre}_info.joblib')
-                        info = joblib.load(info_path) if os.path.exists(info_path) else {}
-                        info['modelo'] = rf
-                        info['encoder'] = encoder
-                        info['usa_secuencias'] = True
-                        info['tipo'] = 'clasificacion'
-                        self.modelos[nombre] = info
+                        try:
+                            rf = joblib.load(rf_path)
+                            encoder = load_model(encoder_path, compile=False)
+                            info_path = os.path.join(dir_path, f'{nombre}_info.joblib')
+                            info = joblib.load(info_path) if os.path.exists(info_path) else {}
+                            info['modelo'] = rf
+                            info['encoder'] = encoder
+                            info['usa_secuencias'] = True
+                            info['tipo'] = 'clasificacion'
+                            self.modelos[nombre] = info
+                        except Exception as e:
+                            self._log(f"No se pudo cargar {encoder_path}: {e}")
+                            fallback_path = os.path.join(dir_path, f'{nombre}.joblib')
+                            if os.path.exists(fallback_path):
+                                self.modelos[nombre] = joblib.load(fallback_path)
+                                self._log(f"Cargado respaldo joblib para {nombre}")
                 
                 else:
                     modelo_path = os.path.join(dir_path, f'{nombre}.joblib')
