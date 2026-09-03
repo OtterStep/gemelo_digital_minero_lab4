@@ -103,7 +103,7 @@ Incluye datos sintéticos de demostración, una base de datos SQLite local y mod
 
 | Categoría | Tecnologías |
 |-----------|-------------|
-| **Lenguaje** | Python 3.12 |
+| **Lenguaje** | Python 3.11 |
 | **Framework Web** | Streamlit 1.28+ |
 | **Base de Datos** | SQLite3 |
 | **Análisis de Datos** | Pandas, NumPy |
@@ -149,7 +149,7 @@ gemelo_digital_minero/
 ## 🚀 Instalación y Configuración
 
 ### Prerrequisitos
-- Python 3.12 (requerido por `tensorflow-cpu==2.15.0`)
+- Python 3.11 (compatible con `tensorflow-cpu==2.15.0`)
 - pip (gestor de paquetes de Python)
 
 ### Pasos de Instalación
@@ -159,15 +159,15 @@ gemelo_digital_minero/
    cd gemelo_digital_minero
    ```
 
-2. **Crear entorno virtual con Python 3.12**
+2. **Crear entorno virtual con Python 3.11**
    ```bash
    # Windows
-   py -3.12 -m venv venv312
-   venv312\Scripts\activate
+   py -3.11 -m venv venv311
+   venv311\Scripts\activate
 
    # Linux/Mac
-   python3.12 -m venv venv312
-   source venv312/bin/activate
+   python3.11 -m venv venv311
+   source venv311/bin/activate
    ```
    > **Importante:** Los modelos híbridos (CNN-LSTM y LSTM-Autoencoder) requieren
    > TensorFlow. Los modelos guardados en `models/` permiten usar la aplicación sin
@@ -308,7 +308,7 @@ El sistema incluye datos simulados realistas basados en especificaciones de equi
 - La aplicación crea la base de datos automáticamente al primer inicio
 
 ### Error al instalar TensorFlow o NumPy en Streamlit Cloud
-- Confirme que `runtime.txt` contiene `3.12`.
+- Confirme que `runtime.txt` contiene `3.11`.
 - Confirme que `requirements.txt` mantiene `tensorflow-cpu==2.15.0` y `numpy<2.0`.
 - Reinicie la aplicación desde **Manage app > Reboot app** después de actualizar el repositorio.
 
