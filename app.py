@@ -54,6 +54,14 @@ def inicializar_sistema():
 
 inicializar_sistema()
 
+@st.cache_resource(show_spinner=False)
+def cargar_motor_ia_desde_disco():
+    """Cargar una sola vez los modelos versionados durante la vida de la app."""
+    motor = MotorPredictivo()
+    if os.path.isdir(MODELS_DIR) and motor.cargar():
+        return motor
+    return None
+
 # ============================================================
 # ESTADO DE SESIÓN
 # ============================================================
@@ -1064,21 +1072,13 @@ def mostrar_motor_ia():
     if st.session_state.motor_ia is None:
         with st.spinner("🔄 Inicializando motor de IA..."):
             try:
-                motor = MotorPredictivo()
-                # Intentar cargar modelo guardado
-                if os.path.exists(MODELS_DIR) and len(os.listdir(MODELS_DIR)) > 0:
-                    if motor.cargar():
-                        st.success("✅ Modelo cargado desde disco")
-                    else:
-                        st.info("Entrenando nuevo modelo...")
-                        motor.cargar_datos()
-                        motor.preparar_datos()
-                        motor.entrenar_todos()
-                        motor.evaluar_todos()
-                        motor.comparar_algoritmos()
-                        motor.guardar()
-                        st.success("✅ Modelo entrenado y guardado")
+                # Primero reutilizar los modelos ya entrenados y cacheados.
+                motor = cargar_motor_ia_desde_disco()
+                if motor is not None:
+                    st.success("✅ Modelos entrenados cargados desde memoria/disco")
                 else:
+                    # Solo entrenar automáticamente si no hay artefactos válidos.
+                    motor = MotorPredictivo()
                     st.info("No hay modelos guardados. Entrenando nuevo motor...")
                     motor.cargar_datos()
                     motor.preparar_datos()
@@ -1086,6 +1086,7 @@ def mostrar_motor_ia():
                     motor.evaluar_todos()
                     motor.comparar_algoritmos()
                     motor.guardar()
+                    cargar_motor_ia_desde_disco.clear()
                     st.success("✅ Motor de IA listo")
                 
                 st.session_state.motor_ia = motor
@@ -1442,6 +1443,7 @@ def mostrar_motor_ia():
                     progress.progress(97, text="Guardando...")
                     if guardar_modelos:
                         motor.guardar()
+                        cargar_motor_ia_desde_disco.clear()
                     progress.progress(100, text="¡Completado!")
                     
                     st.success(f"✅ **Entrenamiento completado**: {len(motor.modelos)} algoritmos entrenados | Mejor: **{motor.mejor_algoritmo.upper() if motor.mejor_algoritmo else '—'}** (puntuación {motor.puntuaciones.get(motor.mejor_algoritmo, {}).get('puntuacion_general',0):.4f})")
@@ -1759,6 +1761,7 @@ def mostrar_motor_ia():
                 
                 if guardar_despues:
                     motor.guardar()
+                    cargar_motor_ia_desde_disco.clear()
                 
                 progress_bar.progress(100)
                 
